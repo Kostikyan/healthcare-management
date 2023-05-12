@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Doctor</title>
+    <style>
+        input[type = submit]{
+            width: 100px;
+            background: rgba(255,150,249,0.32);
+            font-size: larger;
+            border: 0.1px black solid;
+        }
+        input[type = submit]:hover{
+            transition: 0.5s;
+            width: 102px;
+            background: rgba(255,150,249,0.6);
+        }
+    </style>
+</head>
+<body>
+<a href="/doctors">back to doctors</a> <br>
+
+<h1>Add Doctor</h1>
+
+<form action="/doctors/addDoctor" method="post" enctype="multipart/form-data">
+
+<label>Name:            </label>  <input type="text" name="name">         <br>
+<label>Surname:         </label>  <input type="text" name="surname">      <br>
+<label>Email:           </label>  <input type="email" name="email">       <br>
+<label>Specialty:       </label>  <input type="text" name="specialty">    <br>
+<label>Phone Number:    </label>  <input type="text" name="phoneNumber">  <br>
+<label>Profile Picture: </label>  <input type="file" name="profileImage"> <br>
+
+  <input type="submit" value="add">
+</form>
+</body>
+</html>

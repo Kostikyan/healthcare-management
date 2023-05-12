@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Appointment</title>
+
+    <style>
+        input[type = submit] {
+            width: 100px;
+            background: rgba(255, 150, 249, 0.32);
+            font-size: larger;
+            border: 0.1px black solid;
+        }
+
+        input[type = submit]:hover {
+            transition: 0.5s;
+            width: 102px;
+            background: rgba(255, 150, 249, 0.6);
+        }
+    </style>
+</head>
+<body>
+<a href="/appointments">back to appointments</a> <br>
+
+<h1>Add Doctor</h1>
+
+<form action="/appointments/addAppointment" method="post">
+
+    <label>Name: </label> <input type="text" name="name"> <br>
+
+    <label>Datetime: </label> <input type="datetime-local" id="meeting-time"
+                                     name="dateTime" value="2023-01-01T19:23"
+                                     min="2023-01-01T00:00">
+    <br>
+
+    <label>Patient: </label>
+    <select name="patient.id" >
+        <option th:each="patient : ${patients}" th:text="${patient.getName()}" th:value="${patient.getId()}"></option>
+    </select>
+    <br>
+
+    <label>Doctor: </label>
+    <select name="doctor.id" >
+        <option th:each="doctor : ${doctors}" th:text="${doctor.getName()}" th:value="${doctor.getId()}"></option>
+    </select>
+    <br>
+
+    <input type="submit" value="add">
+</form>
+</body>
+</html>

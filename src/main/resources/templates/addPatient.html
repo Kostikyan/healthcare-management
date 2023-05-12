@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Patient</title>
+
+    <style>
+        input[type = submit]{
+            width: 100px;
+            background: rgba(255,150,249,0.32);
+            font-size: larger;
+            border: 0.1px black solid;
+        }
+        input[type = submit]:hover{
+            transition: 0.5s;
+            width: 102px;
+            background: rgba(255,150,249,0.6);
+        }
+    </style>
+</head>
+<body>
+<a href="/patients">back to patients</a> <br>
+
+<h1>Add Patient</h1>
+
+<form action="/patients/addPatient" method="post">
+    <label>Name:             </label>  <input type="text" name="name">           <br>
+    <label>Surname:          </label>  <input type="text" name="surname">        <br>
+    <label>Date of birthday: </label>  <input type="date" name="dateOfBirthday"> <br>
+
+    <input type="submit" value="add">
+</form>
+
+</body>
+</html>

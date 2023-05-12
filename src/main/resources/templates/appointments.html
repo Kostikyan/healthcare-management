@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+</head>
+<body>
+<a href="/">back</a> <br>
+<a href="/appointments/addAppointment">Add Appointment</a> <br>
+
+<h1>Appointment</h1>
+
+<table th:border="1">
+    <tr th:align="center">
+        <th>ID</th>
+        <th>datetime</th>
+        <th>patient id</th>
+        <th>doctor id</th>
+        <th>action</th>
+    </tr>
+    <tr th:each="appointment : ${appointments}" th:border="1">
+        <td th:text="${appointment.getId()}"></td>
+        <td th:text="${appointment.getDateTime()}"></td>
+        <td th:text="${appointment.getPatientId()}"></td>
+        <td th:text="${appointment.getDoctorId()}"></td>
+        <td><a th:href="@{/appointments/remove(id=${appointment.getId()})}">delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
