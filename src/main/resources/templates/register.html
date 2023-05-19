@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Patient</title>
-
+    <title>Register</title>
     <style>
         input[type = submit]{
             width: 100px;
@@ -19,17 +18,16 @@
     </style>
 </head>
 <body>
-<a href="/patients">back to patients</a> <br>
 
-<h1>Add Patient</h1>
+<h1>Register</h1>
 
-<form action="/patients/add" method="post">
-    <label>Name:             </label>  <input type="text" name="name">           <br>
-    <label>Surname:          </label>  <input type="text" name="surname">        <br>
-    <label>Date of birthday: </label>  <input type="date" name="dateOfBirthday"> <br>
+<form action="/user/register" method="post">
+    <label>Name:     </label>  <input type="text" name="name">      <br>
+    <label>Surname:  </label>  <input type="text" name="surname">   <br>
+    <label>Email:    </label>  <input type="email" name="email">    <br>
+    <label>Password: </label>  <input type="text" name="password">  <br>
 
-    <input type="submit" value="add">
+    <input type="submit" value="register">
 </form>
-
 </body>
 </html>

@@ -39,12 +39,12 @@ public class DoctorsController {
         return "doctors";
     }
 
-    @GetMapping("/addDoctor")
+    @GetMapping("/add")
     public String addDoctorPage(){
         return "addDoctor";
     }
 
-    @PostMapping("/addDoctor")
+    @PostMapping("/add")
     public String addDoctor(@ModelAttribute Doctor doctor, @RequestParam("profileImage") MultipartFile multipartFile) throws IOException {
         if(multipartFile != null && !multipartFile.isEmpty()){
             String fileName = System.nanoTime() + "_" + multipartFile.getOriginalFilename();

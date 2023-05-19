@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
@@ -14,11 +14,42 @@
             text-decoration: aquamarine underline;
             transition: 0.5s ease-in-out;
         }
+
+        .welcome b{
+            font-size: 37px;
+            color: #00ff2b;
+            margin-left: 10px;
+            text-transform: capitalize;
+        }
+        .welcome span{
+            font-size: 37px;
+            color: #fff238;
+        }
+
+        .logout{
+            color: #ff2121;
+            text-decoration: aquamarine none;
+            font-size: 35px;
+        }
+        .logout:hover{
+            color: #fff318;
+            text-decoration: aquamarine underline;
+            transition: color 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body>
+<div th:if="${user != null}" class="welcome">
+    <span>Welcome</span>
+    <b th:text="${user.getName()}"></b> <br>
+    <a class="logout" href="/logout" th:if="${user != null}">Logout</a>
+</div>
+<a href="user/register" th:if="${user == null}">Register</a> <br>
+
 <a href="/doctors">Doctors</a> <br>
 <a href="/patients">Patients</a> <br>
 <a href="/appointments">Appointment</a> <br>
+
+<a  href="/login" th:if="${user == null}">Login</a> <br>
 </body>
 </html>

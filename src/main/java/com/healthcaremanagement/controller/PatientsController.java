@@ -9,8 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,12 +29,12 @@ public class PatientsController {
         return "patients";
     }
 
-    @GetMapping("/addPatient")
+    @GetMapping("/add")
     public String addPatientPage() {
         return "addPatient";
     }
 
-    @PostMapping("/addPatient")
+    @PostMapping("/add")
     public String addPatient(@ModelAttribute Patient patient) throws ParseException {
         if (patient == null) {
             return "redirect:/patients";

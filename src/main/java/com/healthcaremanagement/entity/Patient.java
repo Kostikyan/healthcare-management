@@ -1,7 +1,6 @@
 package com.healthcaremanagement.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 import lombok.SneakyThrows;
 import org.springframework.format.annotation.DateTimeFormat;
